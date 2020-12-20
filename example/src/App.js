@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-import { ExampleComponent } from 'dinesh-learn1'
-import 'dinesh-learn1/dist/index.css'
+import { Input } from 'dinesh-learn1';
+import 'dinesh-learn1/dist/index.css';
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
 
-export default App
+  const [value, setValue] = useState('');
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
+
+  return <Input
+    placeholder="Create React Library Example 😄"
+    value={value}
+    handleChange={handleChange}
+  />
+};
+
+export default App;
