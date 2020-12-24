@@ -13,16 +13,27 @@ npm install --save dinesh-learn1
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { useState } from 'react';
 
-import MyComponent from 'dinesh-learn1'
-import 'dinesh-learn1/dist/index.css'
+import { Input } from 'dinesh-learn1';
+import 'dinesh-learn1/dist/index.css';
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+const App = () => {
+
+  const [value, setValue] = useState('');
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
+
+  return <Input
+    placeholder="Create React Library Example 😄"
+    value={value}
+    handleChange={handleChange}
+  />
+};
+
+export default App;
 ```
 
 ## License
